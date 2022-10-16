@@ -6,8 +6,12 @@ require "rails/all"
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
-module WorkshopApp
+module Workshop
   class Application < Rails::Application
+    # Provides an HTML generator for displaying errors that come from Active Model
+    config.action_view.field_error_proc = Proc.new do |html_tag, instance|
+      raw Nokogiri::HTML.fragment(html_tag).child.add_class("is-invalid")
+    end
     config.active_job.queue_adapter = :sidekiq
     config.application_name = Rails.application.class.module_parent_name
     # Initialize configuration defaults for originally generated Rails version.

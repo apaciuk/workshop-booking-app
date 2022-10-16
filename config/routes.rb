@@ -1,6 +1,15 @@
 require 'sidekiq/web'
 
 Rails.application.routes.draw do
+  namespace :admin do
+    resources :posts
+    get    '/',        to: 'home#index'
+    get    'sign_in',  to: 'sessions#new'
+    post   'sign_in',  to: 'sessions#create'
+    delete 'sign_out', to: 'sessions#destroy'
+    resources :users
+    resource  :password_reset
+  end
   get '/privacy', to: 'home#privacy'
   get '/terms', to: 'home#terms'
 authenticate :user, lambda { |u| u.admin? } do
