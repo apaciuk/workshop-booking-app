@@ -20,10 +20,10 @@ FactoryBot.define do
     name { Faker::Lorem.word }
     description { Faker::Lorem.paragraph }
     start_date { Faker::Date.between(from: 2.days.ago, to: Date.today) }
-    end_date { Faker::Date.between(from: Date.today, to: 2.days.from_now) }
+    end_date { start_date + 1.day }
     start_time { Faker::Time.between(from: DateTime.now - 1, to: DateTime.now) }
     end_time { Faker::Time.between(from: DateTime.now, to: DateTime.now + 1) }
-    total_sits { Faker::Number.between(from: 1, to: 100) }
+    total_sits { 20 }
     remaining_sits { total_sits - Faker::Number.between(from: 1, to: total_sits) }
     registration_fee { Faker::Number.between(from: 0, to: 100) }
   end
