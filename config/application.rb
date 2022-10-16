@@ -8,7 +8,7 @@ require 'rails/all'
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
-module Workshop
+module WorkshopApp
   class Application < Rails::Application
     # Provides an HTML generator for displaying errors that come from Active Model
     config.action_view.field_error_proc = proc do |html_tag, _instance|
