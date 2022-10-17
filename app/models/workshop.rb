@@ -27,7 +27,9 @@ class Workshop < ApplicationRecord
     validates :remaining_sits, numericality: { less_than_or_equal_to: :total_sits }
    
   
-
+    def total_duration
+        "#{(end_date - start_date).to_i}" + " days"
+    end
+end
     # has_many :workshop_registrations
    #  has_many :users, through: :workshop_registrations
-end

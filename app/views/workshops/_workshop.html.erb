@@ -6,8 +6,9 @@
     <p class="card-text lead"><%= truncate(workshop.description.capitalize) %>.</p> 
     <div class="workshop" data-id="<%= workshop.id %>">
     <ul class="list-group">
-      <li class="list-group-item"><h4><span class="badge bg-success">From: <%= workshop.start_date %> To <%= workshop.end_date %></span></h4></li>
+      <li class="list-group-item"><h4><span class="badge bg-success">From: <%= workshop.total_duration %></span></h4></li>
        <li class="list-group-item"><h4><span class="badge bg-warning">From: <%= workshop.start_time %> To <%= workshop.end_time %></span></h4></li>
+        <li class="list-group-item"><h4><span class="badge bg-primary">Every Day From: <%= workshop.start_time %> To <%= workshop.end_time %></span></h4></li>
     
     </ul>
  </div>
