@@ -1,0 +1,26 @@
+<div class="card mt-4 mb-2" id="<%= dom_id workshop %>">
+  <div class="card-header bg-light">
+  <h5><%= workshop.name.capitalize %> <span class="badge bg-primary"><%= link_to image_tag('logo-sm.png'), root_path, class: 'logo-sm' %></span></h5>
+  </div>
+    <div class="card-body">
+    <p class="card-text lead"><%= truncate(workshop.description.capitalize) %>.</p> 
+    <div class="workshop" data-id="<%= workshop.id %>">
+    <ul class="list-group">
+      <li class="list-group-item"><h4><span class="badge bg-success">From: <%= workshop.start_date %> To <%= workshop.end_date %></span></h4></li>
+       <li class="list-group-item"><h4><span class="badge bg-warning">From: <%= workshop.start_time %> To <%= workshop.end_time %></span></h4></li>
+    
+    </ul>
+ </div>
+ </div>
+ <div class="card-footer bg-light text-muted">
+   <%= link_to 'View Details', workshop_path(workshop), class: "btn btn-primary" %>
+  <small>Created <%= time_ago_in_words(workshop.created_at) %> ago</small>
+  </div>
+</div>
+
+
+
+
+
+
+

@@ -1,0 +1,15 @@
+<h2>Workshops <span class="badge bg-warning"><%= image_tag avatar_path(current_user, size: 40), height: 32, width: 32, class: "rounded" %></span></h2>
+<div class="col-lg-12">
+ <div class="row">
+    <% @workshops.each do |workshop| %>
+      <div class="col-lg-6">
+     <%= render workshop %>
+      </div>
+     <% end %>
+  </div>
+  </div>
+
+
+
+
+

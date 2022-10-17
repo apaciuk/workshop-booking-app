@@ -1,10 +1,11 @@
 
+Admin::User.create(email: 'xhostcom@gmail.com', password: 'Password9957', password_confirmation: 'Password9957')
 
-Admin::User.create(email: 'admin@example.com', password: 'Password9957', password_confirmation: 'Password9957')
-
+10.times do |id|
 Workshop.create!(
-    name: 'Workshop 1',
-    description: 'This is a workshop', 
+    id: id,
+    name: Faker::Educator.course_name,
+    description: Faker::Lorem.paragraph,
     start_date: Date.today, 
     end_date: Date.today + 1.day, 
     start_time: '10:00', 
@@ -13,4 +14,5 @@ Workshop.create!(
     remaining_sits: 5,
     registration_fee: 1500
 )
+end
 
