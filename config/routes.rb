@@ -19,6 +19,7 @@ Rails.application.routes.draw do
     resources :users
     resource  :password_reset
   end
+
   resources :workshops, only: %i[index show update new create]
   resources :notifications, only: [:index]
   resources :announcements, only: [:index]
